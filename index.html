@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vishnu C — Developer & Cybersecurity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <div class="nav-logo"><span>["_"]</span> VISHNU.C</div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="orb1 hero-orb"></div>
+  <div class="orb2 hero-orb"></div>
+
+  <div class="hero-tag">Available for Opportunities</div>
+  <h1 class="hero-name">
+    <span class="line1 glitch" data-text="VISHNU C">VISHNU C</span>
+  </h1>
+  <div class="hero-role">
+    &gt; <span id="typed-text"></span><span class="cursor-blink"></span>
+  </div>
+  <p class="hero-bio">
+    B.Sc. Computer Science student specializing in <strong style="color:var(--text)">Cybersecurity</strong> & 
+    <strong style="color:var(--text)">Full-Stack Development</strong>. 
+    Passionate about securing systems and building elegant web applications. 
+    Based in Coimbatore, Tamil Nadu.
+  </p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">View Projects →</a>
+    <a href="#contact" class="btn-secondary">Let's Connect</a>
+  </div>
+
+  <div class="hero-socials">
+    <a href="https://github.com/VISHNU-CYB3R" target="_blank" title="GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/vishnu-vj-418705321/" target="_blank" title="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="mailto:vishnu8870958403@gmail.com" title="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </a>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<div class="section-divider"></div>
+<section id="about">
+  <div class="section-label">01 / About</div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <h2 class="section-title">Who I Am</h2>
+      <p>I'm <strong>Vishnu C</strong>, a passionate Computer Science student at Rathinam Group of Institutions, Coimbatore, with a specialization in <strong>Cybersecurity</strong>.</p>
+      <p>I thrive at the intersection of offensive security and full-stack development — whether it's hunting vulnerabilities in systems or crafting robust web applications with Python, JavaScript, and Flask.</p>
+      <p>Beyond code, I have a unique eye for detail developed through <strong>Goldsmithing</strong> — designing, crafting, and refining gold ornaments using both traditional and modern techniques. That precision and artistry carries directly into my engineering work.</p>
+      <p>I'm actively seeking an <strong>entry-level role</strong> where I can grow, contribute, and solve hard problems.</p>
+      <div class="about-stats">
+        <div class="stat-card reveal">
+          <div class="stat-num">8</div>
+          <div class="stat-label">CGPA — B.Sc. CS With CY</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Security Projects</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Languages Spoken</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-hex">
+          <span class="avatar-initials">VC</span>
+        </div>
+        <div class="floating-tags tag-cyber">// CYBERSECURITY</div>
+        <div class="floating-tags tag-dev">// FULLSTACK</div>
+        <div class="floating-tags tag-ml">// PYTHON</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<div class="section-divider"></div>
+<section id="skills">
+  <div class="section-label">02 / Skills</div>
+  <h2 class="section-title reveal">Technical Arsenal</h2>
+  <div class="skills-grid">
+    <div class="skill-category reveal">
+      <span class="cat-icon">⚡</span>
+      <div class="cat-title">Programming Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <span class="cat-icon">🌐</span>
+      <div class="cat-title">Web Technologies</div>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Flask</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <span class="cat-icon">🔐</span>
+      <div class="cat-title">Cybersecurity</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Ethical Hacking</span>
+        <span class="skill-tag">Network Security</span>
+        <span class="skill-tag">SQL Injection</span>
+        <span class="skill-tag">Phishing</span>
+        <span class="skill-tag">Red Team</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <span class="cat-icon">🗄️</span>
+      <div class="cat-title">Databases</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">RDBMS</span>
+        <span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <span class="cat-icon">📊</span>
+      <div class="cat-title">Data & Analytics</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Data Entry</span>
+        <span class="skill-tag">ML with Python</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <span class="cat-icon">🤝</span>
+      <div class="cat-title">Soft Skills</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Adaptability</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Teamwork</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Work Ethic</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<div class="section-divider"></div>
+<section id="education">
+  <div class="section-label">03 / Education</div>
+  <h2 class="section-title reveal">Academic Journey</h2>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-date">2023 — PRESENT</div>
+      <div class="timeline-title">Bachelor of Computer Science</div>
+      <div class="timeline-sub">Rathinam Group of Institutions, Coimbatore, Tamil Nadu</div>
+      <div class="timeline-detail">Specialization in Cybersecurity | CGPA: 8</div>
+      <span class="timeline-badge">B.Sc. Computer Science</span>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2021 — 2022</div>
+      <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
+      <div class="timeline-sub">City Corporation Higher Secondary School, Coimbatore</div>
+      <div class="timeline-detail">Tamil Nadu State Board | Passed: 2023</div>
+      <span class="timeline-badge">State Board</span>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2018 — 2019</div>
+      <div class="timeline-title">Secondary School Leaving Certificate (SSLC)</div>
+      <div class="timeline-sub">City Corporation Higher Secondary School, Coimbatore</div>
+      <div class="timeline-detail">Tamil Nadu State Board | Passed: 2021</div>
+      <span class="timeline-badge">State Board</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<div class="section-divider"></div>
+<section id="projects">
+  <div class="section-label">04 / Projects</div>
+  <h2 class="section-title reveal">Featured Work</h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-num">PROJECT_01</div>
+      <div class="project-icon">💉</div>
+      <h3 class="project-title">SQL Injection Attack Simulation</h3>
+      <p class="project-desc">Researched and demonstrated unauthorized database access through SQL query manipulation. Explored common injection vectors and implemented proof-of-concept attack scenarios to understand defensive countermeasures.</p>
+      <div class="project-tags">
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">Ethical Hacking</span>
+        <span class="project-tag">Security Research</span>
+        <span class="project-tag">PostgreSQL</span>
+      </div>
+      <a href="https://github.com/VISHNU-CYB3R" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-num">PROJECT_02</div>
+      <div class="project-icon">🎣</div>
+      <h3 class="project-title">Phishing Simulation & User Education</h3>
+      <p class="project-desc">Studied how fake login pages are crafted to capture credentials. Designed and implemented user education banners and awareness mechanisms to simulate real-world phishing prevention strategies.</p>
+      <div class="project-tags">
+        <span class="project-tag">Social Engineering</span>
+        <span class="project-tag">HTML/CSS</span>
+        <span class="project-tag">User Awareness</span>
+        <span class="project-tag">JavaScript</span>
+      </div>
+      <a href="https://github.com/VISHNU-CYB3R" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<div class="section-divider"></div>
+<section id="certifications">
+  <div class="section-label">05 / Certifications</div>
+  <h2 class="section-title reveal">Credentials</h2>
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <div class="cert-icon">🤖</div>
+      <span class="cert-name">Machine Learning with Python
+      <img src="./ML with Python.png" alt="Machine Learning with Python Certificate" class="cert-image" /></span>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">📈</div>
+      <span class="cert-name">Offensive Pentesting
+      <img src="./OffensivePentesting.png" alt="Offensive Pentesting Certificate" class="cert-image" /></span>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🔐</div>
+      <span class="cert-name">Introduction to Power BI
+      <img src="./IntroductionToPowerBI.png" alt="Introduction to Power BI Certificate" class="cert-image" /></span>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">⚔️</div>
+      <span class="cert-name">Understanding Cloud Computing
+      <img src="./UnderstandingCloudComputing.png" alt="Understanding Cloud Computing Certificate" class="cert-image" /></span>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🛡️</div>
+      <span class="cert-name">Information Security
+      <img src="./InformationSecurity.png" alt="Information Security Certificate" class="cert-image" /></span>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🎯</div>
+      <span class="cert-name">Red Team Analysis
+      <img src="./RedTeam.png" alt="Red Team Analysis Certificate" class="cert-image" /></span>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🗃️</div>
+      <span class="cert-name">Introduction to Relational Databases in SQL
+      <img src="./IntroductionToRelationalDatabasesInSQL.png" alt="Machine Learning with Python Certificate" class="cert-image" /></span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<div class="section-divider"></div>
+<section id="contact">
+  <div class="section-label">06 / Contact</div>
+  <h2 class="section-title reveal">Get In Touch</h2>
+  <div class="contact-wrap">
+    <div class="contact-info-block reveal">
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-value"><a href="tel:+918870958403">+91 8870958403</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📧</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value"><a href="mailto:vishnu8870958403@gmail.com">vishnu8870958403@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">💼</div>
+        <div>
+          <div class="contact-item-label">LinkedIn</div>
+          <div class="contact-item-value"><a href="https://www.linkedin.com/in/vishnu-vj-418705321/" target="_blank">linkedin.com/in/vishnu-vj</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">⚙️</div>
+        <div>
+          <div class="contact-item-label">GitHub</div>
+          <div class="contact-item-value"><a href="https://github.com/VISHNU-CYB3R" target="_blank">github.com/VISHNU-CYB3R</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Location</div>
+          <div class="contact-item-value">Coimbatore, Tamil Nadu, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- ✅ FORMSPREE FORM — Replace YOUR_FORM_ID with your actual Formspree endpoint -->
+      <form
+        id="contact-form"
+        class="contact-form"
+        action="https://formspree.io/f/xdabrjkv"
+        method="POST"
+        novalidate
+      >
+        <!-- Formspree honeypot spam protection -->
+        <input type="text" name="_gotcha" style="display:none" />
+        <!-- Redirect back to portfolio after submit (optional) -->
+        <input type="hidden" name="_next" value="https://VISHNU-CYB3R.github.io/#contact" />
+        <input type="hidden" name="_subject" value="New Portfolio Contact from Vishnu's Website 🚀" />
+ 
+        <div class="form-group">
+          <label class="form-label" for="f-name">Name</label>
+          <input
+            id="f-name" name="name" type="text"
+            class="form-input" placeholder="Your name"
+            required minlength="2"
+          />
+          <span class="field-error" id="err-name"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-email">Email</label>
+          <input
+            id="f-email" name="email" type="email"
+            class="form-input" placeholder="your@email.com"
+            required
+          />
+          <span class="field-error" id="err-email"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-subject">Subject</label>
+          <input
+            id="f-subject" name="subject" type="text"
+            class="form-input" placeholder="Job opportunity / Collaboration / Other"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-message">Message</label>
+          <textarea
+            id="f-message" name="message"
+            class="form-textarea" placeholder="Tell me about the opportunity..."
+            required minlength="10"
+          ></textarea>
+          <span class="field-error" id="err-message"></span>
+        </div>
+ 
+        <button type="submit" id="submit-btn" class="btn-primary" style="width:fit-content; cursor:none; border:none;">
+          <span id="btn-text">Send Message →</span>
+          <span id="btn-spinner" style="display:none">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin360 0.8s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </span>
+        </button>
+ 
+        <!-- Status messages -->
+        <div id="form-success" class="form-status success" style="display:none">
+          <span>✓</span> Message sent! I'll get back to you within 24 hours.
+        </div>
+        <div id="form-error" class="form-status error" style="display:none">
+          <span>✗</span> Something went wrong. Please try emailing me directly at vishnu8870958403@gmail.com
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-left">© 2025 Vishnu C — All rights reserved</div>
+  <!-- <div class="footer-right">Built with <span>❤</span> using HTML, CSS & JS</div> -->
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
