@@ -9,9 +9,9 @@
       --neon3: #7B61FF;
       --text: #E8F4F8;
       --muted: #6A8A9A;
-      --mono: 'Share Tech Mono', monospace;
-      --display: 'Syne', sans-serif;
-      --body: 'Inter', sans-serif;
+      --mono: 'Share Tech Mono', 'Courier New', Courier, monospace;
+      --display: 'Syne', 'Segoe UI', Arial, sans-serif;
+      --body: 'Inter', 'Segoe UI', Arial, sans-serif;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +26,7 @@
       cursor: none;
     }
 
-    /* Custom Cursor */
+    /* Custom Cursor — hidden by default, shown by JS on desktop only */
     #cursor {
       width: 12px; height: 12px;
       background: var(--neon);
@@ -36,7 +36,7 @@
       z-index: 9999;
       transform: translate(-50%, -50%);
       transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-      mix-blend-mode: screen;
+      opacity: 0; /* hidden until JS enables it */
     }
     #cursor-ring {
       width: 36px; height: 36px;
@@ -47,9 +47,11 @@
       z-index: 9998;
       transform: translate(-50%, -50%);
       transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
-      opacity: 0.5;
+      opacity: 0; /* hidden until JS enables it */
     }
-    body:hover #cursor { opacity: 1; }
+    body.has-cursor { cursor: none; }
+    body.has-cursor #cursor { opacity: 1; }
+    body.has-cursor #cursor-ring { opacity: 0.5; }
 
     /* Scrollbar */
     ::-webkit-scrollbar { width: 4px; }
