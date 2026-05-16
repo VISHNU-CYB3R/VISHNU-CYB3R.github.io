@@ -24,19 +24,16 @@ if (hamburger && mobileNav) {
   });
 }
  
-/* ── CUSTOM CURSOR (desktop only) ── */
+/* ── CUSTOM CURSOR (desktop/mouse only) ── */
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursor-ring');
  
-const isTouchDevice = window.matchMedia('(hover: none)').matches;
+// Only activate on real pointer/mouse devices, not touch screens
+const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
  
-if (isTouchDevice) {
-  /* On phones/tablets — restore normal cursor, hide custom elements */
-  document.body.style.cursor = 'auto';
-  if (cursor) cursor.style.display = 'none';
-  if (ring)   ring.style.display   = 'none';
-} else {
+if (!isTouch) {
   let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  let cursorReady = false;
  
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
@@ -44,6 +41,11 @@ if (isTouchDevice) {
     if (cursor) {
       cursor.style.left = mouseX + 'px';
       cursor.style.top  = mouseY + 'px';
+    }
+    // Show cursor ONLY after first real mouse move — prevents static dot on load
+    if (!cursorReady) {
+      cursorReady = true;
+      document.body.classList.add('has-cursor');
     }
   });
  
@@ -61,16 +63,15 @@ if (isTouchDevice) {
   document.querySelectorAll('a, button, .skill-category, .project-card, .cert-card').forEach(el => {
     el.addEventListener('mouseenter', () => {
       if (cursor) { cursor.style.width = '20px'; cursor.style.height = '20px'; cursor.style.background = 'var(--neon2)'; }
-      if (ring)   { ring.style.width = '50px';   ring.style.height = '50px'; }
+      if (ring)   { ring.style.width = '50px'; ring.style.height = '50px'; }
     });
     el.addEventListener('mouseleave', () => {
       if (cursor) { cursor.style.width = '12px'; cursor.style.height = '12px'; cursor.style.background = 'var(--neon)'; }
-      if (ring)   { ring.style.width = '36px';   ring.style.height = '36px'; }
+      if (ring)   { ring.style.width = '36px'; ring.style.height = '36px'; }
     });
   });
 }
-
-
+ 
 /* ── TYPEWRITER ── */
 const roles = [
   'Cybersecurity Enthusiast',
@@ -117,11 +118,10 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
  
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
  
-  // ── ACTIVE NAV ──
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+/* ── ACTIVE NAV HIGHLIGHT ── */
+const sections    = document.querySelectorAll('section[id]');
+const navLinks    = document.querySelectorAll('.nav-links a');
 const mobNavLinks = document.querySelectorAll('.mob-link');
  
 window.addEventListener('scroll', () => {
