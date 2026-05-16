@@ -1,84 +1,141 @@
-// ── CURSOR ──
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursor-ring');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
+/* ══════════════════════════════════════════
+   VISHNU C — Portfolio Script
+   Includes: Hamburger, Cursor, Typewriter,
+   Scroll Reveal, Active Nav, Contact Form
+══════════════════════════════════════════ */
+ 
+/* ── HAMBURGER MENU ── */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+const mobLinks  = document.querySelectorAll('.mob-link');
+ 
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
   });
+  mobLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+ 
+/* ── CUSTOM CURSOR (desktop only) ── */
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+ 
+const isTouchDevice = window.matchMedia('(hover: none)').matches;
+ 
+if (isTouchDevice) {
+  /* On phones/tablets — restore normal cursor, hide custom elements */
+  document.body.style.cursor = 'auto';
+  if (cursor) cursor.style.display = 'none';
+  if (ring)   ring.style.display   = 'none';
+} else {
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+ 
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (cursor) {
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top  = mouseY + 'px';
+    }
+  });
+ 
   function animateRing() {
     ringX += (mouseX - ringX) * 0.12;
     ringY += (mouseY - ringY) * 0.12;
-    ring.style.left = ringX + 'px';
-    ring.style.top = ringY + 'px';
+    if (ring) {
+      ring.style.left = ringX + 'px';
+      ring.style.top  = ringY + 'px';
+    }
     requestAnimationFrame(animateRing);
   }
   animateRing();
+ 
   document.querySelectorAll('a, button, .skill-category, .project-card, .cert-card').forEach(el => {
     el.addEventListener('mouseenter', () => {
-      cursor.style.width = '20px'; cursor.style.height = '20px';
-      cursor.style.background = 'var(--neon2)';
-      ring.style.width = '50px'; ring.style.height = '50px';
+      if (cursor) { cursor.style.width = '20px'; cursor.style.height = '20px'; cursor.style.background = 'var(--neon2)'; }
+      if (ring)   { ring.style.width = '50px';   ring.style.height = '50px'; }
     });
     el.addEventListener('mouseleave', () => {
-      cursor.style.width = '12px'; cursor.style.height = '12px';
-      cursor.style.background = 'var(--neon)';
-      ring.style.width = '36px'; ring.style.height = '36px';
+      if (cursor) { cursor.style.width = '12px'; cursor.style.height = '12px'; cursor.style.background = 'var(--neon)'; }
+      if (ring)   { ring.style.width = '36px';   ring.style.height = '36px'; }
     });
   });
+}
+
+
+/* ── TYPEWRITER ── */
+const roles = [
+  'Cybersecurity Enthusiast',
+  'Full Stack Developer',
+  'Ethical Hacker',
+  'Python Developer',
+  'Problem Solver'
+];
+let roleIdx = 0, charIdx = 0, deleting = false;
+const typedEl = document.getElementById('typed-text');
  
-  // ── TYPEWRITER ──
-  const roles = [
-    'Cybersecurity Enthusiast',
-    'Full Stack Developer',
-    'Ethical Hacker',
-    'Python Developer',
-    'Problem Solver'
-  ];
-  let roleIdx = 0, charIdx = 0, deleting = false;
-  const typedEl = document.getElementById('typed-text');
-  function typeLoop() {
-    const current = roles[roleIdx];
-    if (!deleting) {
-      typedEl.textContent = current.substring(0, charIdx + 1);
-      charIdx++;
-      if (charIdx === current.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
-    } else {
-      typedEl.textContent = current.substring(0, charIdx - 1);
-      charIdx--;
-      if (charIdx === 0) {
-        deleting = false;
-        roleIdx = (roleIdx + 1) % roles.length;
-        setTimeout(typeLoop, 300); return;
-      }
+function typeLoop() {
+  if (!typedEl) return;
+  const current = roles[roleIdx];
+  if (!deleting) {
+    typedEl.textContent = current.substring(0, charIdx + 1);
+    charIdx++;
+    if (charIdx === current.length) {
+      deleting = true;
+      setTimeout(typeLoop, 1800);
+      return;
     }
-    setTimeout(typeLoop, deleting ? 50 : 80);
+  } else {
+    typedEl.textContent = current.substring(0, charIdx - 1);
+    charIdx--;
+    if (charIdx === 0) {
+      deleting = false;
+      roleIdx = (roleIdx + 1) % roles.length;
+      setTimeout(typeLoop, 300);
+      return;
+    }
   }
-  typeLoop();
+  setTimeout(typeLoop, deleting ? 50 : 80);
+}
+typeLoop();
  
-  // ── SCROLL REVEAL ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-      }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.08 });
+ 
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
  
   // ── ACTIVE NAV ──
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const mobNavLinks = document.querySelectorAll('.mob-link');
+ 
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 140) current = s.id;
   });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+  mobNavLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
  
   // ── FORMSPREE CONTACT FORM ──
   const contactForm = document.getElementById('contact-form');
